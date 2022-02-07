@@ -1,0 +1,26 @@
+/* settings */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+:root{
+  --main-color: #121227;
+  --main-white: #fff;
+  --main-gold: #f0c040;
+  --main-black: #000;
+}
+.container{
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
