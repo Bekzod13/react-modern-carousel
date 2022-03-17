@@ -3,14 +3,13 @@ import Slider from 'react-slick';
 import './App.css';
 
 // import icons
-import {BsArrowLeft, BsArrowRight, BsBellSlash, BsBellFill} from 'react-icons/bs';
+import {BsArrowLeft, BsArrowRight,} from 'react-icons/bs';
 
 // import images
 import img1 from './images/img1.jpg';
 import img2 from './images/img2.jpg';
 import img3 from './images/img3.jpg';
 import img4 from './images/img4.jpg';
-import logo from './images/logo.jpg';
 
 const images = [img1, img2, img3, img4];
 
@@ -29,6 +28,11 @@ function SamplePrevArrow({onClick}) {
     </div>
   );
 }
+function EmptyArrow({onClick}) {
+  return (
+    <div></div>
+  );
+}
 
 function App() {
 
@@ -45,7 +49,27 @@ function App() {
     beforeChange: (current, next)=>setSlideIndex(next),
     centerMode: true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (current, next) => (
+      <div className={current === slideIndex ? 'dot dot-active' : 'dot'}>
+      </div>
+    ),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          nextArrow: <EmptyArrow />,
+          prevArrow: <EmptyArrow />,
+        }
+      }]
   };
 
   return (

@@ -1,0 +1,9 @@
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (current, next) => (
+      <div className={current === slideIndex ? 'login-dot login-dot-active' : 'login-dot'}>
+      </div>
+    );
